@@ -1,16 +1,34 @@
-# mdlabs_intern_task1
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+# Meals App
 
-A few resources to get you started if this is your first Flutter project:
+A Flutter app to view the best meals around the world, using Getx as a state management 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<img width="1536" height="1024" alt="ChatGPT Image Aug 12, 2025, 04_19_04 PM" src="https://github.com/user-attachments/assets/8b7bc7a2-49d0-41ee-bf57-85d689dc6279" />
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## API Used
+
+https://www.themealdb.com/api.php
+
+
+## Features
+
+1- Get Data From UI via API
+
+2- Review more about the meals
+
+3- Multi Lanuages (English, Arabic)
+
+4- Supported dark mode
+
+
+## GetX Features
+
+<img width="886" height="582" alt="task1_meals_diagram" src="https://github.com/user-attachments/assets/a6086ce5-ae2e-4340-9070-a8a63a711306" />
+
+
+
+
+
+
