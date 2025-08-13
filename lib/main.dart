@@ -21,7 +21,12 @@ class App extends StatelessWidget {
       locale: Get.find<SharedService>().currentLocale,
       debugShowCheckedModeBanner: false,
       theme: Get.find<SharedService>().currentTheme,
+      themeMode:
+          Get.find<SharedService>().currentTheme.brightness == Brightness.dark
+          ? ThemeMode.dark
+          : ThemeMode.light,
       darkTheme: CustomThemes.darkTheme,
+
       title: 'Mealo',
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,

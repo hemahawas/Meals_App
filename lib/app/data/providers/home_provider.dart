@@ -25,6 +25,7 @@ class HomeProvider extends AppProvider {
 
   changeTheme(String theme) {
     Get.changeTheme(theme == 'light' ? ThemeData.light() : ThemeData.dark());
+    Get.changeThemeMode(theme == 'light' ? ThemeMode.light : ThemeMode.dark);
     Get.find<LocalStorageService>().saveString(AppConstants.themeKey, theme);
   }
 }

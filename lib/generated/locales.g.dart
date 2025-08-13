@@ -15,6 +15,7 @@ class LocaleKeys {
   static const Search = 'Search';
   static const Meals_Detials = 'Meals_Detials';
   static const Error_Occured = 'Error_Occured';
+  static const No_Meals_Found = 'No_Meals_Found';
 }
 
 class Locales {
@@ -23,11 +24,13 @@ class Locales {
     'Search': 'بحث',
     'Meals_Detials': 'تفاصيل الوجبة',
     'Error_Occured': 'حدث خطأ ما',
+    'No_Meals_Found': 'لا توجد وجبات',
   };
   static const en = {
     'For_Dilicious_Meals': 'For Delicious Meals',
     'Search': 'Search',
     'Meals_Detials': 'Meals Details',
     'Error_Occured': 'Error Occurred',
+    'No_Meals_Found': 'No Meals Found',
   };
 }

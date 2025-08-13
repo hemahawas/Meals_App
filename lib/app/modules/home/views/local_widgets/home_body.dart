@@ -32,14 +32,15 @@ class HomeBody extends GetView<HomeController> {
           ],
         ),
         Expanded(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: controller.obx(
-              (state) => RefreshIndicator(
-                onRefresh: () => controller.getMeals(),
-                child: CustomScrollView(
-                  slivers: [
-                    state?.meals == null
+          child: RefreshIndicator(
+            color: Colors.deepOrangeAccent,
+            onRefresh: () => controller.getMeals(),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: CustomScrollView(
+                slivers: [
+                  controller.obx(
+                    (state) => state?.meals == null
                         ? SliverToBoxAdapter(child: SizedBox.shrink())
                         : SliverGrid.builder(
                             gridDelegate:
@@ -62,19 +63,32 @@ class HomeBody extends GetView<HomeController> {
                               },
                             ),
                           ),
-                  ],
-                ),
-              ),
-              onError: (_) => Center(
-                child: Text(
-                  LocaleKeys.Error_Occured.tr,
-                  style: Styles.styleMedium16,
-                ),
-              ),
-              onLoading: const Center(
-                child: CircularProgressIndicator(
-                  color: Colors.deepOrangeAccent,
-                ),
+                    onError: (_) => SliverToBoxAdapter(
+                      child: Center(
+                        child: Text(
+                          LocaleKeys.Error_Occured.tr,
+                          style: Styles.styleMedium16,
+                        ),
+                      ),
+                    ),
+                    onEmpty: SliverToBoxAdapter(
+                      child: Center(
+                        child: Text(
+                          LocaleKeys.No_Meals_Found.tr,
+                          style: Styles.styleMedium16,
+                        ),
+                      ),
+                    ),
+
+                    onLoading: SliverToBoxAdapter(
+                      child: const Center(
+                        child: CircularProgressIndicator(
+                          color: Colors.deepOrangeAccent,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
