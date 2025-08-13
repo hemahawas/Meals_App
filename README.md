@@ -35,15 +35,19 @@ https://www.themealdb.com/api.php
 
 Controls the time of splash screen, then navigates to home page
 
+
 2- Home Controller
 
  a. Communicates with home provider for abstraction. The home provider fetches data from API, changes and stores the localization and theme modes. 
 
  b. Handles the three states after fetching the data from provider (Empty, Success, Error)
 
+
 3- Meal Details Controller
 
 Get the selected meal via Get arguments before initializing the UI
+
+
 
 ### Services
 
@@ -51,15 +55,20 @@ Get the selected meal via Get arguments before initializing the UI
 
 Provides read and write from and to local storage via Flutter Secure Storage package
 
+
 2- Shared Service
 
 A service used over the application to fetch the required variables according to each usecase.
+
+
 
 ## Other Getx Features
 
 - Utilized GetPage to handle routes
 - Generated Locales via Get CLI
 - Implemented Dependency Injection via Bindings
+
+
 
 ## Screen Shots
 
