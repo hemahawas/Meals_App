@@ -47,20 +47,18 @@ Controls the time of splash screen, then navigates to home page
 
 Get the selected meal via Get arguments before initializing the UI
 
-
+---
 
 ### Services
 
 1- Local Storage Service
-
 Provides read and write from and to local storage via Flutter Secure Storage package
 
 
 2- Shared Service
-
 A service used over the application to fetch the required variables according to each usecase.
 
-
+---
 
 ## Other Getx Features
 
