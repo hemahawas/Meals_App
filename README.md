@@ -14,7 +14,7 @@ https://www.themealdb.com/api.php
 
 ## Features
 
-1- Get Data From UI via API
+1- View meals in UI via API
 
 2- Review more about the meals
 
