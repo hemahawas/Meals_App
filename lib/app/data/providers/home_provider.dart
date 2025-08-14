@@ -32,7 +32,7 @@ class HomeProvider extends AppProvider {
         response = await httpClient.get('${EndpointConstants.search}?a=$query');
         break;
       default:
-        response = await httpClient.get('${EndpointConstants.search}?s=$query');
+        response = await httpClient.get('${EndpointConstants.allMeals}$query');
         break;
     }
 
