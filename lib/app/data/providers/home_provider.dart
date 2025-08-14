@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mdlabs_intern_task1/app/core/enums/filters.dart';
+import 'package:mdlabs_intern_task1/app/core/models/filtered_meal_response_model.dart';
 import 'package:mdlabs_intern_task1/app/core/models/meals_response_model.dart';
 import 'package:mdlabs_intern_task1/app/core/values/app_constants.dart';
 import 'package:mdlabs_intern_task1/app/core/values/endpoint_constants.dart';
@@ -13,6 +15,31 @@ class HomeProvider extends AppProvider {
       throw Exception('Failed to load meals');
     }
     final mealsResponse = MealsResponseModel.fromJson(response.body);
+    return mealsResponse;
+  }
+
+  Future<FilteredMealResponseModel> getSearchedMeals(
+    String query,
+    Filters filter,
+  ) async {
+    final Response response;
+
+    switch (filter) {
+      case Filters.category:
+        response = await httpClient.get('${EndpointConstants.search}?c=$query');
+        break;
+      case Filters.area:
+        response = await httpClient.get('${EndpointConstants.search}?a=$query');
+        break;
+      default:
+        response = await httpClient.get('${EndpointConstants.search}?s=$query');
+        break;
+    }
+
+    if (response.status.hasError) {
+      throw Exception('Failed to load meals');
+    }
+    final mealsResponse = FilteredMealResponseModel.fromJson(response.body);
     return mealsResponse;
   }
 
